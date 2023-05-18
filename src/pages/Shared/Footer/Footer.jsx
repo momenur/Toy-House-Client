@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div>
-            <footer className="items-center p-8 footer bg-neutral text-neutral-content">
+            <footer className="items-center p-8 border-t footer bg-neutral text-neutral-content">
                 <div className="items-center grid-flow-col">
                     <Link> <img className='w-[100px] rounded-full' src={navLogo} alt="" /></Link>
+                    <p>Copyright © 2023 : </p>
                     <h1 className='text-2xl font-bold'>TOY-WORLD</h1>
                 </div>
                 <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">

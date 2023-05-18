@@ -6,13 +6,16 @@ import navLogo from '../../../assets/nav-logo.jpg';
 const Navbar = () => {
     const navItems = <>
         <li> <Link to='/'>Home</Link> </li>
-        <li> <Link>All Toys</Link> </li>
-        <li> <Link>My Toys</Link> </li>
-        <li> <Link>Add A Toy</Link> </li>
-        <li> <Link>Blogs</Link> </li>
+        <li> <Link to='/allToy'>All Toys</Link> </li>
+        <li> <Link to='/myToy'>My Toys</Link> </li>
+        <li> <Link to='addToy'>Add a Toy</Link> </li>
+        <li> <Link to='/blog'>Blogs</Link> </li>
+        <li> <Link to='/register' className='text-green-400'>Register</Link> </li>
+        <li> <Link to='/logIn' className='text-green-400'>Log In</Link> </li>
+        <li> <button className='text-red-400'>Log Out</button> </li>
     </>
     return (
-        <div className="navbar bg-neutral text-neutral-content">
+        <div className="border-b navbar bg-neutral text-neutral-content">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
