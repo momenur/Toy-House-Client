@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import userLogo from '../../../assets/boy.png';
 import navLogo from '../../../assets/nav-logo.jpg';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Navbar = () => {
+
+    const {user, logOut} = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result = () => { })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    
     const navItems = <>
         <li> <Link to='/'>Home</Link> </li>
         <li> <Link to='/allToy'>All Toys</Link> </li>
         <li> <Link to='/myToy'>My Toys</Link> </li>
         <li> <Link to='addToy'>Add a Toy</Link> </li>
         <li> <Link to='/blog'>Blogs</Link> </li>
-        <li> <Link to='/register' className='text-green-400'>Register</Link> </li>
-        <li> <Link to='/logIn' className='text-green-400'>Log In</Link> </li>
-        <li> <button className='text-red-400'>Log Out</button> </li>
+        {
+            user ? <li> <button onClick={handleLogOut} className='text-red-400'>Log Out</button> </li> : <>
+            <li> <Link to='/register' className='text-green-400'>Register</Link> </li>
+            <li> <Link to='/logIn' className='text-green-400'>Log In</Link> </li></>
+        }
+        
+        
     </>
     return (
         <div className="border-b navbar bg-neutral text-neutral-content">
