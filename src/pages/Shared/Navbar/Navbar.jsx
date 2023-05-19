@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import userLogo from '../../../assets/boy.png';
 import navLogo from '../../../assets/nav-logo.jpg';
 import { AuthContext } from '../../../providers/AuthProvider';
+import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 const Navbar = () => {
 
@@ -18,15 +19,15 @@ const Navbar = () => {
 
     
     const navItems = <>
-        <li> <Link to='/'>Home</Link> </li>
-        <li> <Link to='/allToy'>All Toys</Link> </li>
-        <li> <Link to='/myToy'>My Toys</Link> </li>
-        <li> <Link to='addToy'>Add a Toy</Link> </li>
-        <li> <Link to='/blog'>Blogs</Link> </li>
+        <li> <ActiveLink to='/'>Home</ActiveLink> </li>
+        <li> <ActiveLink to='/allToy'>All Toys</ActiveLink> </li>
+        <li> <ActiveLink to='/myToy'>My Toys</ActiveLink> </li>
+        <li> <ActiveLink to='addToy'>Add a Toy</ActiveLink> </li>
+        <li> <ActiveLink to='/blog'>Blogs</ActiveLink> </li>
         {
             user ? <li> <button onClick={handleLogOut} className='text-red-400'>Log Out</button> </li> : <>
-            <li> <Link to='/register' className='text-green-400'>Register</Link> </li>
-            <li> <Link to='/logIn' className='text-green-400'>Log In</Link> </li></>
+            <li className='text-green-400'> <ActiveLink to='/register' >Register</ActiveLink> </li>
+            <li className='text-green-400'> <ActiveLink to='/logIn' >Log In</ActiveLink> </li></>
         }
         
         
@@ -42,6 +43,7 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
+                
                 <Link> <img className='w-[80px] rounded-full' src={navLogo} alt="" /></Link>
                 <a className="text-xl normal-case btn btn-ghost">TOY WORLD</a>
             </div>
