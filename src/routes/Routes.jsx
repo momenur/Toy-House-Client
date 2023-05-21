@@ -52,7 +52,8 @@ const router = createBrowserRouter([
         },
         {
           path: 'update/:id',
-          element: <PrivateRoute><Update></Update></PrivateRoute>
+          element: <PrivateRoute><Update></Update></PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/allToy/${params.id}`)
         }
       ]
     },
