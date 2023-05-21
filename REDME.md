@@ -1,0 +1,3 @@
+-----at Fist i setup initial setUp, then added nevbar , and then added banner use carosor .
+-----then i added gellary section , and then added shop by category 
+----- then i added all toy page , and my toy and added login and register page .
