@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const AddToy = () => {
+
+    const {user} = useContext(AuthContext)
+    console.log(user.email);
 
     const handleAddToy = event => {
         event.preventDefault();
@@ -9,7 +13,7 @@ const AddToy = () => {
         const photo = form.photo.value;
         const toyName = form.name.value;
         const sellerName = form.sellerName.value;
-        const sellerEmail = form.sellerEmail.value;
+        const sellerEmail = user.email;
         const quantity = form.quantity.value;
         const category = form.category.value;
         const sellerImg = form.sellerImg.value;
@@ -19,10 +23,17 @@ const AddToy = () => {
         const newToy = {photo, toyName, sellerEmail, sellerName, quantity, category, sellerImg, rating, detail}
         console.log(newToy);
 
-        fetch('http://localhost:5000/allToy')
+        fetch('http://localhost:5000/allToy', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newToy)
+        })
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            form.reset()
         })
 
     }
@@ -57,7 +68,7 @@ const AddToy = () => {
                             <label className="label">
                                 <span className="label-text">Seller Email</span>
                             </label>
-                            <input type="text" placeholder="Seller Email" name='sellerEmail' className="input input-bordered"/>
+                            <input type="text" placeholder="Seller Email" name='sellerEmail' className="input input-bordered" value={user.email}/>
                         </div>
                     </div>
                     <div className='gap-8 md:flex'>
