@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const MyToy = () => {
 
@@ -14,10 +15,32 @@ const MyToy = () => {
     }, [])
 
     const myToy = allToy.filter(toy => toy.sellerEmail === user.email)
-    console.log(myToy);
+
+    const handleDelete = id => {
+        console.log(id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Swal.fire(
+                //     'Deleted!',
+                //     'Your file has been deleted.',
+                //     'success'
+                // )
+                console.log('delate confirm');
+            }
+        })
+    }
     return (
         <div>
-            <div className="overflow-x-auto">
+            <h1 className='pt-20 text-5xl font-semibold text-center text-neutral-content'><span className='border-b'>MY TOY's</span></h1>
+            <div className="py-12 overflow-x-auto">
                 <table className="table w-full table-zebra">
                     <thead>
                         <tr>
@@ -34,7 +57,7 @@ const MyToy = () => {
                         {
                             myToy.map(toy => <tr key={toy._id}>
                                 <th>
-                                    <button className="btn btn-circle btn-outline">
+                                    <button onClick={() => handleDelete(toy._id)} className="btn btn-circle btn-outline">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                     </button>
                                 </th>
