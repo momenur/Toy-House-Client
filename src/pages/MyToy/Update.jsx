@@ -25,7 +25,7 @@ const Update = () => {
         const updatedToy = { photo, toyName, sellerEmail, sellerName, quantity, category, sellerImg, rating, detail }
         console.log(updatedToy);
 
-        fetch(`http://localhost:5000/allToy/${old._id}`, {
+        fetch(`https://toy-world-server-virid.vercel.app/allToy/${old._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
