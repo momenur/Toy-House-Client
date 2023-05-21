@@ -1,24 +1,49 @@
 import React from 'react';
 
 const AddToy = () => {
+
+    const handleAddToy = event => {
+        event.preventDefault();
+        const form = event.target;
+
+        const photo = form.photo.value;
+        const toyName = form.name.value;
+        const sellerName = form.sellerName.value;
+        const sellerEmail = form.sellerEmail.value;
+        const quantity = form.quantity.value;
+        const category = form.category.value;
+        const sellerImg = form.sellerImg.value;
+        const rating = form.rating.value;
+        const detail = form.detail.value
+
+        const newToy = {photo, toyName, sellerEmail, sellerName, quantity, category, sellerImg, rating, detail}
+        console.log(newToy);
+
+        fetch('http://localhost:5000/allToy')
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+
+    }
     return (
         <div>
             
             <div className="flex-shrink-0 w-full my-8 bg-gray-400 rounded-md shadow-2xl card">
             <h1 className="my-8 text-5xl font-bold text-center text-rose-50 "><span className='border-b-2'>Add a Toy!</span></h1>
-                <form className="card-body">
+                <form onSubmit={handleAddToy} className="card-body">
                     <div className='gap-8 md:flex'>
                         <div className="md:w-1/2 form-control">
                             <label className="label">
                                 <span className="label-text">Picture URL</span>
                             </label>
-                            <input type="text" placeholder="Photo URL" name='photo' className="input input-bordered" />
+                            <input type="text" placeholder="Photo URL" name='photo' className="input input-bordered"/>
                         </div>
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="Name" name='name' className="input input-bordered" />
+                            <input type="text" placeholder="Name" name='name' className="input input-bordered"/>
                         </div>
                     </div>
                     <div className='gap-8 md:flex'>
@@ -32,7 +57,7 @@ const AddToy = () => {
                             <label className="label">
                                 <span className="label-text">Seller Email</span>
                             </label>
-                            <input type="text" placeholder="Seller Email" name='sellerEmail' className="input input-bordered" />
+                            <input type="text" placeholder="Seller Email" name='sellerEmail' className="input input-bordered"/>
                         </div>
                     </div>
                     <div className='gap-8 md:flex'>
@@ -40,13 +65,13 @@ const AddToy = () => {
                             <label className="label">
                                 <span className="label-text">Available Quantity</span>
                             </label>
-                            <input type="text" placeholder="Available Quantity" name='quantity' className="input input-bordered" />
+                            <input type="text" placeholder="Available Quantity" name='quantity' className="input input-bordered"/>
                         </div>
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Sub-Category</span>
                             </label>
-                            <input type="text" placeholder="Sub-Category" name='category' className="input input-bordered" />
+                            <input type="text" placeholder="Sub-Category : bike/car/jeep" name='category' className="input input-bordered"/>
                         </div>
                     </div>
                     <div className='gap-8 md:flex'>
