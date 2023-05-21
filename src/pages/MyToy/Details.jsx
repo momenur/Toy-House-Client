@@ -17,7 +17,7 @@ const Details = () => {
                 <p>Rating: {toy.rating}</p>
                 <p>Available Quantity: {toy.quantity}</p>
                 <p>Toy Details: {toy.detail}</p>
-                <Link to='/allToy'><button className='mt-8 btn btn-info'>Back</button></Link>
+                
             </div>
         </div>
     );
