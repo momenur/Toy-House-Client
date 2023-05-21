@@ -47,7 +47,7 @@ const Home = () => {
                                     <figure><img className='w-[350px] rounded-lg mt-4 h-[250px]' src={bike.photo} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{bike.toyName}</h2>
-                                        <p>Price: ${bike.price}</p>
+                                        <p>Price: ${bike.quantity}</p>
                                         <p>Rating: {bike.rating}</p>
                                         <div className="justify-end card-actions">
                                             <Link to={`/allToy/${bike._id}`}><button className="btn btn-primary">View Details</button></Link>
