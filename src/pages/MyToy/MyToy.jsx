@@ -28,12 +28,21 @@ const MyToy = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Swal.fire(
-                //     'Deleted!',
-                //     'Your file has been deleted.',
-                //     'success'
-                // )
-                console.log('delate confirm');
+
+                fetch(`http://localhost:5000/allToy/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Toy has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
             }
         })
     }
@@ -67,15 +76,12 @@ const MyToy = () => {
                                 <td>{5 + toy.quantity}</td>
                                 <td>{toy.quantity}</td>
                                 <td>
-                                    <Link to={`/allToy/${toy._id}`}>
+                                    <Link to={`/update/${toy._id}`}>
                                         <button className='btn btn-primary'>Update</button>
                                     </Link>
                                 </td>
                             </tr>)
                         }
-
-
-
                     </tbody>
                 </table>
             </div>
