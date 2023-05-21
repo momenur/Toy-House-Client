@@ -8,6 +8,7 @@ const Home = () => {
         <div className='bg-neutral text-neutral-content'>
             <Banner></Banner>
             <Gallery></Gallery>
+            
             {/*  tabs */}
 
             <Tabs>

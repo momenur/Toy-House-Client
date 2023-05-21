@@ -34,6 +34,7 @@ const AddToy = () => {
         .then(data => {
             console.log(data);
             form.reset()
+            alert('Data is Added')
         })
 
     }

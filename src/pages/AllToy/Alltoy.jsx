@@ -37,7 +37,7 @@ const Alltoy = () => {
                         } */}
                         {
                             allToy.map(toy => <tr key={toy._id}>
-                                <th>1</th>
+                                <th></th>
                                 <td>{toy.sellerName}</td>
                                 <td>{toy.toyName}</td>
                                 <td>{toy.category}</td>
