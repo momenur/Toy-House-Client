@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Title from '../../components/Title/Title';
 const MyToy = () => {
 
     const { user } = useContext(AuthContext)
@@ -47,7 +48,7 @@ const MyToy = () => {
     }
     return (
         <div>
-            <h1 className='pt-20 text-5xl font-semibold text-center text-neutral-content'><span className='border-b'>MY TOY's</span></h1>
+            <Title title="my toy's"/>
             <div className="py-12 overflow-x-auto">
                 <table className="table w-full table-zebra">
                     <thead>

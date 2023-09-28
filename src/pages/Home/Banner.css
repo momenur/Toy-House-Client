@@ -1,0 +1,5 @@
+.backgroundImage{
+    background-image: url(../../assets/images/bg-js-doctor.jpg);  
+    background-size: cover;
+    background-repeat: no-repeat;
+  }

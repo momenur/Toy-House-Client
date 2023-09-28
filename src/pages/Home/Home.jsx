@@ -3,6 +3,8 @@ import Banner from './Banner';
 import Gallery from './Gallery/Gallery';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import { Link } from 'react-router-dom';
+import Title from '../../components/Title/Title';
+import ActiveLink from '../../ActiveLink/ActiveLink';
 
 const Home = () => {
 
@@ -20,22 +22,23 @@ const Home = () => {
 
 
     return (
-        <div className='bg-neutral text-neutral-content'>
+        <div className=' text-neutral-content'>
             <Banner></Banner>
             <Gallery></Gallery>
 
             {/*  tabs */}
 
             <h1></h1>
-            <h1 className='pt-20 mb-24 text-5xl font-semibold text-center'><span className='border-b'>Shop By Category</span></h1>
+            <Title title="toy's by category"></Title>
 
             <Tabs>
                 <TabList>
 
-                    <div className='flex justify-around'>
+                    <div className='flex justify-around pb-4 font-bold border-b-2 cursor-pointer text-rose-600 border-rose-200'>
                         <Tab>Bike</Tab>
                         <Tab>Car</Tab>
                         <Tab>Jeep</Tab>
+                        
                     </div>
                 </TabList>
 
@@ -43,7 +46,7 @@ const Home = () => {
                     <div className='grid-cols-3 gap-4 pb-12 mt-12 md:grid ms-4'>
                         {
                             bikes.map(bike => <div >
-                                <div className="shadow-xl card card-compact w-96 bg-neutral-600 text-neutral-content">
+                                <div className="shadow-xl shadow-rose-500 card card-compact w-96 bg-rose-500 text-neutral-content">
                                     <figure><img className='w-[350px] rounded-lg mt-4 h-[250px]' src={bike.photo} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{bike.toyName}</h2>
@@ -62,7 +65,7 @@ const Home = () => {
                     <div className='grid-cols-3 gap-4 pb-12 mt-12 md:grid ms-4'>
                         {
                             cars.map(bike => <div >
-                                <div className="shadow-xl card card-compact w-96 bg-neutral-600 text-neutral-content">
+                                <div className="shadow-xl shadow-rose-500 card card-compact w-96 bg-rose-500 text-neutral-content">
                                     <figure><img className='w-[350px] rounded-lg mt-4 h-[250px]' src={bike.photo} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{bike.toyName}</h2>
@@ -81,7 +84,7 @@ const Home = () => {
                     <div className='grid-cols-3 gap-4 pb-12 mt-12 md:grid ms-4'>
                         {
                             jeeps.map(bike => <div >
-                                <div className="shadow-xl card card-compact w-96 bg-neutral-600 text-neutral-content">
+                                <div className="shadow-xl shadow-rose-500 card card-compact w-96 bg-rose-500 text-neutral-content">
                                     <figure><img className='w-[350px] rounded-lg mt-4 h-[250px]' src={bike.photo} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{bike.toyName}</h2>

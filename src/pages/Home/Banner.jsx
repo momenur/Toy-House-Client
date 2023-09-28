@@ -1,44 +1,26 @@
 import React from 'react';
-import slider1 from '../../assets/sliderImg/1.jpg'
-import slider2 from '../../assets/sliderImg/2.jpg'
-import slider3 from '../../assets/sliderImg/3.jpg'
-import slider4 from '../../assets/sliderImg/4.jpg'
-import slider5 from '../../assets/sliderImg/5.jpg'
-import slider6 from '../../assets/sliderImg/6.jpg'
-
+import './Banner.css'
+import doctorLeft from '../../assets/images/b-l.jpg'
+import doctorMidle from '../../assets/images/b-m.jpg'
+import doctorRight from '../../assets/images/b-r.jpg'
 const Banner = () => {
     return (
-        <div className="w-full carousel">
-            <div id="slide1" className="relative w-full carousel-item ">
-                <img src={slider3} className="w-full h-[400px] bg-gradient-to-r from-indigo-500" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ">
-                    <a href="#slide4" className="btn btn-circle">❮</a>
-                    <h1 className='absolute text-5xl font-bold text-neutral-content bottom-24'>Tract Toy <br /> <span className='text-xl'>Made in Chaina</span></h1>
-                    <a href="#slide2" className="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide2" className="relative w-full carousel-item">
-                <img src={slider4} className="w-full h-[400px]" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide1" className="btn btn-circle">❮</a>
-                    <h1 className='absolute text-5xl font-bold text-neutral-content bottom-24'>Tata Tract Toy <br /> <span className='text-xl'>Made in Japan</span></h1>
-                    <a href="#slide3" className="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide3" className="relative w-full carousel-item">
-                <img src={slider1} className="w-full h-[400px]" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide2" className="btn btn-circle">❮</a>
-                    <h1 className='absolute text-5xl font-bold text-neutral-content bottom-24'>Sport Car Toy <br /> <span className='text-xl'>Made in Chaina</span></h1>
-                    <a href="#slide4" className="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide4" className="relative w-full carousel-item">
-                <img src={slider2} className="w-full h-[400px]" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide3" className="btn btn-circle">❮</a>
-                    <h1 className='absolute text-5xl font-bold text-neutral-content bottom-24'>Supper Tract Toy <br /> <span className='text-xl'>Made in Bangladesh</span></h1>
-                    <a href="#slide1" className="btn btn-circle">❯</a>
+        <div className="mx-auto backgroundImage">
+            <div className='flex items-center justify-center w-full md:h-[700px]'>
+                <div className='flex items-center justify-center gap-8 px-10'>
+                    <div className='w-1/2 text-gray-200'>
+                        <h1 className='mb-6 font-bold text-7xl'>Baby Toy's</h1>
+                        <h3 className='mb-4 text-3xl font-semibold text-rose-500'>Your Best baby toy here</h3>
+                        <p className='text-lg leading-snug line-clamp-3 line text-rose-100'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <button className='px-4 py-2 mt-6 text-xl font-medium text-white rounded-md bg-rose-400'>All Service</button>
+                    </div>
+                    <div className='w-[550px] h-auto mb-28'>
+                        <div className='relative w-full'>
+                            <img className='w-[250px] h-[280px] border-rose-400 border-4' src={doctorLeft} alt="" />
+                            <img className='w-[250px] h-[280px] absolute top-1/2 left-1/4 border-rose-400 border-4' src={doctorMidle} alt="" />
+                            <img className='w-[250px] h-[280px] absolute right-0 top-0 border-rose-400 border-4' src={doctorRight} alt="" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

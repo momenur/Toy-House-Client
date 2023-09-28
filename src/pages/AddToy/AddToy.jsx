@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import Title from '../../components/Title/Title';
 
 const AddToy = () => {
 
@@ -40,9 +41,8 @@ const AddToy = () => {
     }
     return (
         <div>
-            
-            <div className="flex-shrink-0 w-full my-8 bg-gray-400 rounded-md shadow-2xl card">
-            <h1 className="my-8 text-5xl font-bold text-center text-rose-50 "><span className='border-b-2'>Add a Toy!</span></h1>
+            <Title title="add a toy"/>
+            <div className="flex-shrink-0 w-full my-8 rounded-md shadow-2xl bg-rose-400 card">
                 <form onSubmit={handleAddToy} className="card-body">
                     <div className='gap-8 md:flex'>
                         <div className="md:w-1/2 form-control">

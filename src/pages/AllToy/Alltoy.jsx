@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SingleToy from './SingleToy';
 import { Link } from 'react-router-dom';
-
+import Title from '../../components/Title/Title';
 const Alltoy = () => {
     const [allToy, setAllToy] = useState([]);
     useEffect(() => {
@@ -14,7 +14,7 @@ const Alltoy = () => {
     return (
         <div>
 
-
+            <Title title="all toy's"/>
             <div className="overflow-x-auto">
                 <table className="table w-full table-zebra">
                     {/* head */}
