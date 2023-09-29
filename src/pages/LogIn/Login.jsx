@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import Title from '../../components/Title/Title';
 
 const Login = () => {
 
@@ -33,12 +34,10 @@ const Login = () => {
     }
 
     return (
-        <div className="min-h-screen hero bg-neutral">
+        <div className="min-h-screen hero">
             <div className="flex-col hero-content ">
-                <div className="text-center lg:text-left">
-                    <h1 className="mb-8 text-5xl font-bold text-neutral-content">Login now!</h1>
-                </div>
-                <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
+                <Title title="login Now"/>
+                <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-rose-500 md:w-[600px]">
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -54,10 +53,10 @@ const Login = () => {
 
                         </div>
                         <div className="mt-6 form-control">
-                            <input className="btn btn-primary bg-neutral" type="submit" value="LOGIN" />
+                            <input className="btn btn-primary" type="submit" value="LOGIN" />
                         </div>
                         <div className="mt-6 form-control">
-                            <button onClick={handelGoogleLogIn} className="btn btn-primary bg-neutral">Google SignIN</button>
+                            <button onClick={handelGoogleLogIn} className="btn btn-primary">Google SignIN</button>
                         </div>
                     </form>
                 </div>

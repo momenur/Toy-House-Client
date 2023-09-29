@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import Title from '../../components/Title/Title';
 
 const Register = () => {
 
@@ -23,12 +24,10 @@ const Register = () => {
         .catch(error => console.log(error))
     }
     return (
-        <div className="min-h-screen hero bg-neutral">
+        <div className="min-h-screen hero">
             <div className="flex-col hero-content ">
-                <div className="text-center lg:text-left">
-                    <h1 className="mb-8 text-5xl font-bold text-neutral-content">Register now!</h1>
-                </div>
-                <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
+                <Title title="Register now"/>
+                <div className="flex-shrink-0 w-full max-w-sm card bg-rose-500 md:w-[600px] shadow-rose-500 shadow-2xl">
                     <form onSubmit={handleSignUP} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -56,7 +55,7 @@ const Register = () => {
 
                         </div>
                         <div className="mt-6 form-control">
-                            <input className="btn btn-primary bg-neutral" type="submit" value="Register" />
+                            <input className="btn btn-primary" type="submit" value="Register" />
                         </div>
                     </form>
                 </div>
