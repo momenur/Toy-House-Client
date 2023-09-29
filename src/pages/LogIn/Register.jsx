@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Title from '../../components/Title/Title';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Register = () => {
-
+    const navigate = useNavigate();
     const {createUser} = useContext(AuthContext);
 
 
@@ -19,7 +21,14 @@ const Register = () => {
         createUser(email, password)
         .then(result => {
             const user = result.user;
-            console.log(user);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'User Login Successfully',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            navigate('/')
         })
         .catch(error => console.log(error))
     }
