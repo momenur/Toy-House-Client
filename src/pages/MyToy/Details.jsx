@@ -6,7 +6,7 @@ const Details = () => {
     const toy = useLoaderData()
     console.log(toy);
     return (
-        <div>
+        <div className='mb-8' data-aos="zoom-out">
             <Title title="Toy Details"/>
             <div className='pt-12 bg-rose-800'>
                 <div className='md:ms-24'>

@@ -24,7 +24,7 @@ const Register = () => {
         .catch(error => console.log(error))
     }
     return (
-        <div className="min-h-screen hero">
+        <div className="min-h-screen hero" data-aos="flip-right">
             <div className="flex-col hero-content ">
                 <Title title="Register now"/>
                 <div className="flex-shrink-0 w-full max-w-sm card bg-rose-500 md:w-[600px] shadow-rose-500 shadow-2xl">

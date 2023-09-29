@@ -34,7 +34,7 @@ const Home = () => {
             <Tabs>
                 <TabList>
 
-                    <div className='flex justify-around pb-4 font-bold border-b-2 cursor-pointer text-rose-600 border-rose-200'>
+                    <div className='flex justify-around pb-4 text-xl font-bold border-b-2 cursor-pointer text-rose-600 border-rose-200' data-aos="zoom-up">
                         <Tab>Bike</Tab>
                         <Tab>Car</Tab>
                         <Tab>Jeep</Tab>
@@ -43,7 +43,7 @@ const Home = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className='grid-cols-3 gap-4 pb-12 mt-12 md:grid ms-4'>
+                    <div className='grid-cols-3 gap-4 pb-12 mt-12 md:grid ms-4' data-aos="fade-right">
                         {
                             bikes.map(bike => <div >
                                 <div className="shadow-xl shadow-rose-500 card card-compact w-96 bg-rose-500 text-neutral-content">
@@ -62,7 +62,7 @@ const Home = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid-cols-3 gap-4 pb-12 mt-12 md:grid ms-4'>
+                    <div className='grid-cols-3 gap-4 pb-12 mt-12 md:grid ms-4' data-aos="zoom-out">
                         {
                             cars.map(bike => <div >
                                 <div className="shadow-xl shadow-rose-500 card card-compact w-96 bg-rose-500 text-neutral-content">
@@ -81,7 +81,7 @@ const Home = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid-cols-3 gap-4 pb-12 mt-12 md:grid ms-4'>
+                    <div className='grid-cols-3 gap-4 pb-12 mt-12 md:grid ms-4'  data-aos="zoom-in">
                         {
                             jeeps.map(bike => <div >
                                 <div className="shadow-xl shadow-rose-500 card card-compact w-96 bg-rose-500 text-neutral-content">

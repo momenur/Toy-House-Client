@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div>
+        <div  data-aos="zoom-out">
             <footer className="flex items-center justify-between px-8 py-6 text-white bg-rose-500">
                 <div className="flex items-center justify-between w-1/2">
                     <img className='w-[150px]' src={navLogo} alt="" />

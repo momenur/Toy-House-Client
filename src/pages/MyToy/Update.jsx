@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import Title from '../../components/Title/Title';
 
 const Update = () => {
     const {user} = useContext(AuthContext)
@@ -45,10 +46,10 @@ const Update = () => {
 
 
     return (
-        <div>
-
-            <div className="flex-shrink-0 w-full my-8 bg-gray-400 rounded-md shadow-2xl card">
-                <h1 className="my-8 text-5xl font-bold text-center text-rose-50 "><span className='border-b-2'>Add a Toy!</span></h1>
+        <div  data-aos="zoom-out">
+            <Title title="Update toy"/>
+            <div className="flex-shrink-0 w-full my-8 rounded-md shadow-2xl bg-rose-400 card">
+                
                 <form onSubmit={handleUpdateToy} className="card-body">
                     <div className='gap-8 md:flex'>
                         <div className="md:w-1/2 form-control">
